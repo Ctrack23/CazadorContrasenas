@@ -231,7 +231,7 @@ class CofreComun(Cofre):
 
     def abrir(self) -> str:
         """Polimorfismo: mensaje especializado para cofre común."""
-        return super().abrir() + "\n  🪙 Monedas de cobre tintinean en tu bolsa."
+        return super().abrir() + "\n   Monedas de cobre tintinean en tu bolsa."
 
 
 class CofreRaro(Cofre):
@@ -246,7 +246,7 @@ class CofreRaro(Cofre):
 
     def abrir(self) -> str:
         """Polimorfismo: mensaje especializado para cofre raro."""
-        return super().abrir() + "\n  💎 Una gema azul destella ante tus ojos."
+        return super().abrir() + "\n  Una gema azul destella ante tus ojos."
 
 
 class CofreLegendario(Cofre):
@@ -261,7 +261,7 @@ class CofreLegendario(Cofre):
 
     def abrir(self) -> str:
         """Polimorfismo: mensaje especializado para cofre legendario."""
-        return super().abrir() + "\n  🏆 ¡El brillo del oro ilumina toda la sala!"
+        return super().abrir() + "\n  ¡El brillo del oro ilumina toda la sala!"
 
 
 class CofreMaldito(Cofre):
@@ -276,7 +276,7 @@ class CofreMaldito(Cofre):
 
     def abrir(self) -> str:
         """Polimorfismo: mensaje especializado para cofre maldito."""
-        return super().abrir() + "\n  💀 Una sombra oscura te envuelve. ¡Contraseña inválida!"
+        return super().abrir() + "\n  Una sombra oscura te envuelve. ¡Contraseña inválida!"
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -310,7 +310,7 @@ class JuegoCazador:
     def _mostrar_bienvenida(self):
         """Muestra la pantalla de bienvenida del juego."""
         print("\n" + "═" * 60)
-        print("   ⚔️   CAZADOR DE CONTRASEÑAS   ⚔️")
+        print(" CAZADOR DE CONTRASEÑAS")
         print("═" * 60)
         print("  Genera contraseñas válidas para abrir cofres y")
         print("  acumular puntos. ¡Que comience la cacería!")
@@ -318,27 +318,27 @@ class JuegoCazador:
 
     def _mostrar_estado(self):
         """Muestra el estado actual del jugador."""
-        print(f"\n  👤 Cazador : {self.nombre_jugador}")
-        print(f"  🎯 Ronda   : {self.ronda}")
-        print(f"  ⭐ Puntaje : {self.puntaje} pts")
+        print(f"\n  Cazador : {self.nombre_jugador}")
+        print(f"  Ronda   : {self.ronda}")
+        print(f"  Puntaje : {self.puntaje} pts")
         print("  " + "─" * 40)
 
     def _mostrar_despedida(self):
         """Muestra el resumen final al salir del juego."""
         print("\n" + "═" * 60)
-        print("   🏁  FIN DEL JUEGO")
+        print("    FIN DEL JUEGO")
         print("═" * 60)
         print(f"  Cazador  : {self.nombre_jugador}")
         print(f"  Rondas   : {self.ronda}")
         print(f"  Puntaje  : {self.puntaje} pts")
         if self.puntaje >= 100:
-            print("  🥇 ¡Maestro Cazador! Eres una leyenda.")
+            print("   ¡Maestro Cazador! Eres una leyenda.")
         elif self.puntaje >= 50:
-            print("  🥈 ¡Buen trabajo! Sigue entrenando.")
+            print("   ¡Buen trabajo! Sigue entrenando.")
         elif self.puntaje > 0:
-            print("  🥉 Apenas positivo. ¡La próxima será mejor!")
+            print("  Apenas positivo. ¡La próxima será mejor!")
         else:
-            print("  💀 Las maldiciones te dominaron. ¡Inténtalo de nuevo!")
+            print("  Las maldiciones te dominaron. ¡Inténtalo de nuevo!")
         print("═" * 60 + "\n")
 
     # ── Métodos de lógica ────────────────────────────────────────
@@ -401,7 +401,7 @@ class JuegoCazador:
         """
         self.ronda += 1
         self._mostrar_estado()
-        print(f"  🎲 RONDA {self.ronda}")
+        print(f"  RONDA {self.ronda}")
         print("  " + "─" * 40)
 
         # ── Paso 1: Obtener longitud válida ──────────────────────
@@ -410,19 +410,19 @@ class JuegoCazador:
             try:
                 longitud = self._pedir_longitud()
             except EntradaNoNumericaError as e:
-                print(f"\n  ⚠️  ERROR: {e}")
+                print(f"\n   ERROR: {e}")
             except LongitudInvalidaError as e:
-                print(f"\n  ⚠️  ERROR: {e}")
+                print(f"\n   ERROR: {e}")
 
         # ── Paso 2: Generar contraseña ───────────────────────────
         try:
             contrasena = Contrasena(longitud)
         except LongitudInvalidaError as e:
             # Aunque ya validamos, capturamos por robustez
-            print(f"\n  ❌ Error al crear contraseña: {e}")
+            print(f"\n   Error al crear contraseña: {e}")
             return
 
-        print(f"\n  🔑 Contraseña generada: {contrasena}")
+        print(f"\n   Contraseña generada: {contrasena}")
 
         # ── Paso 3: Validar contraseña ───────────────────────────
         es_valida, razones = contrasena.validar()
@@ -439,13 +439,13 @@ class JuegoCazador:
                     print(f"     • {r}")
                 cofre = CofreMaldito()
         else:
-            print("\n  ✅ ¡Contraseña VÁLIDA!")
+            print("\n  ¡Contraseña VÁLIDA!")
             cofre = self._seleccionar_cofre_valido()
 
         # ── Paso 4: Abrir cofre y actualizar puntaje ─────────────
         print(cofre.abrir())
         self.puntaje += cofre.puntos
-        print(f"\n  ⭐ Puntaje actualizado: {self.puntaje} pts")
+        print(f"\n   Puntaje actualizado: {self.puntaje} pts")
 
     def _preguntar_continuar(self) -> bool:
         """
@@ -489,7 +489,7 @@ class JuegoCazador:
                 break
             except Exception as e:
                 # Captura cualquier excepción no prevista
-                print(f"\n  ⚠️  Error inesperado: {e}")
+                print(f"\n    Error inesperado: {e}")
 
             seguir = self._preguntar_continuar()
 

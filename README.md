@@ -1,10 +1,10 @@
-# 🔐 Cazador de Contraseñas
+# Cazador de Contraseñas
 
 Juego interactivo de consola desarrollado en Python con **Programación Orientada a Objetos**. El jugador genera contraseñas aleatorias para abrir cofres y acumular puntos, enfrentando penalizaciones cuando las contraseñas no cumplen los requisitos.
 
 ---
 
-## 🎮 ¿Cómo funciona el juego?
+## ¿Cómo funciona el juego?
 
 1. El jugador elige la longitud de la contraseña (mínimo 8 caracteres).
 2. El sistema genera una contraseña completamente aleatoria.
@@ -14,7 +14,7 @@ Juego interactivo de consola desarrollado en Python con **Programación Orientad
 
 ---
 
-## 🧩 Estructura del proyecto
+## Estructura del proyecto
 
 ```
 cazador-contrasenas/
@@ -25,7 +25,7 @@ cazador-contrasenas/
 
 ---
 
-## 🏗️ Arquitectura — Programación Orientada a Objetos
+##  Arquitectura — Programación Orientada a Objetos
 
 El proyecto aplica los cuatro pilares de la POO:
 
@@ -58,7 +58,7 @@ El proyecto aplica los cuatro pilares de la POO:
 
 ---
 
-## ✅ Requisitos de una contraseña válida
+## Requisitos de una contraseña válida
 
 - Longitud mínima de **8 caracteres** (definida por el usuario)
 - Al menos **una letra mayúscula**
@@ -69,18 +69,18 @@ El proyecto aplica los cuatro pilares de la POO:
 
 ---
 
-## 🎲 Tipos de cofre
+## Tipos de cofre
 
 | Cofre | Puntos | Probabilidad |
 |---|---|---|
-| 🪵 Común | +10 | 50% |
-| 💎 Raro | +25 | 30% |
-| 🏆 Legendario | +50 | 20% |
-| 💀 Maldito | -20 | Al fallar la contraseña |
+|  Común | +10 | 50% |
+|   Raro | +25 | 30% |
+|   Legendario | +50 | 20% |
+|  Maldito | -20 | Al fallar la contraseña |
 
 ---
 
-## 🚀 Instalación y uso
+##  Instalación y uso
 
 ### Requisitos
 
@@ -104,30 +104,30 @@ python cazador_contrasenas.py
 
 ```
 ════════════════════════════════════════════════════════════
-   ⚔️   CAZADOR DE CONTRASEÑAS   ⚔️
+   CAZADOR DE CONTRASEÑAS   
 ════════════════════════════════════════════════════════════
 
   ¿Cómo te llamas, Cazador? Ana
   ¡Bienvenido, Ana! Que los cofres te favorezcan.
 
-  🎲 RONDA 1
+  RONDA 1
   Ingresa la longitud de la contraseña (mín. 8): 12
 
-  🔑 Contraseña generada: R7¿kWpZ#mQeN
+  Contraseña generada: R7¿kWpZ#mQeN
 
-  ✅ ¡Contraseña VÁLIDA!
+  ¡Contraseña VÁLIDA!
 
-  🔓 ¡Cofre Legendario abierto!
+  ¡Cofre Legendario abierto!
   ¡Un cofre de oro puro! La leyenda es tuya.
   Puntos: +50
-  🏆 ¡El brillo del oro ilumina toda la sala!
+  ¡El brillo del oro ilumina toda la sala!
 
-  ⭐ Puntaje actualizado: 50 pts
+  Puntaje actualizado: 50 pts
 ```
 
 ---
 
-## 📚 Conceptos académicos demostrados
+## Conceptos académicos demostrados
 
 Este proyecto fue desarrollado como actividad académica para demostrar el dominio de:
 
@@ -140,7 +140,7 @@ Este proyecto fue desarrollado como actividad académica para demostrar el domin
 
 ---
 
-## 👤 Autor
+##  Autor
 
 Desarrollado por Camilo Nuñez Garzon
 Materia: Programación Orientada a Objetos 
